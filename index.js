@@ -2,10 +2,6 @@
 var PORT = process.env.PORT || 3000;
 
 const express = require('express');
-require('dotenv').config();
-
-const mongoose = require('mongoose');
-
 
 const session = require('express-session');
 const exphbs = require('express-handlebars');
@@ -34,6 +30,7 @@ const authRouter = require('./routes/auth');
 // Using db functions
 const db = require('./models/db.js');
 
+db.connect();
 
 /********* Using initializations **********/
 
@@ -92,7 +89,7 @@ app.use('/', authRouter); // Use the routes var to process registration/login
 
 /** Setting server */
 
-db.connect();
+
 
 var server = app.listen(PORT, function()
 {
