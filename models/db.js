@@ -18,7 +18,7 @@ const database = {
     connect: function () {
         mongoose.connect(process.env.MONGODB_URI || url, options, function(error) {
             if(error) throw error;
-            console.log('Connected to: ' + process.env.MONGODB_URI);
+            console.log('Connected to: ' + (process.env.MONGODB_URI || process.env.DB_URL));
         });
     },
 
