@@ -3,7 +3,7 @@ const User = require('../models/User.js');
 const Profile = require('../models/Profile.js');
 
 const { validationResult } = require('express-validator');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 
 
 exports.registerUser = (req, res) => {
