@@ -17,5 +17,26 @@
     "node-uuid": "^1.4.8",
     "on-headers": "^1.0.2",
     "uuid": "^8.3.2"
+  },
+  "name": "animatrix-ccapdev",
+  "description": "CCAPDEV Machine Project",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jacob-villa/CCAPDEV-Machine-Project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jacob-villa/CCAPDEV-Machine-Project/issues"
+  },
+  "homepage": "https://github.com/jacob-villa/CCAPDEV-Machine-Project#readme",
+  "engines": {
+    "node": "16.14.2"
   }
 }
