@@ -1,8 +1,11 @@
 /******* Initializations ************/ 
+var PORT = process.env.PORT || 3000;
 
 const express = require('express');
+require('dotenv').config();
+
 const mongoose = require('mongoose');
-const dotenv = require('dotenv');
+
 
 const session = require('express-session');
 const exphbs = require('express-handlebars');
@@ -52,9 +55,7 @@ app.engine('hbs', exphbs.engine({
 app.set('view engine', 'hbs');
 
 // Setting dotenv and port
-dotenv.config();
-port = process.env.PORT;
-hostname = process.env.HOSTNAME;
+HOSTNAME = process.env.HOSTNAME;
 mongoURI = process.env.DB_URL;
 
 // Initialize data and static folder that our app will use
@@ -93,8 +94,8 @@ app.use('/', authRouter); // Use the routes var to process registration/login
 
 db.connect();
 
-var server = app.listen(port, hostname, function()
+var server = app.listen(PORT, function()
 {
     console.log("Server is running at: ");
-    console.log("http://" + hostname + ":" + port);
+    //console.log("http://" + hostname + ":" + port);
 });

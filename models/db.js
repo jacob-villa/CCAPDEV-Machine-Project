@@ -1,4 +1,4 @@
-
+require('dotenv').config();
 const mongoose = require('mongoose');
 
 const Post = require('./Post.js');
@@ -16,9 +16,9 @@ const options = {
 const database = {
 
     connect: function () {
-        mongoose.connect(url, options, function(error) {
+        mongoose.connect(process.env.MONGODB_URI || url, options, function(error) {
             if(error) throw error;
-            console.log('Connected to: ' + url);
+            console.log('Connected to: ' + process.env.MONGODB_URI);
         });
     },
 
