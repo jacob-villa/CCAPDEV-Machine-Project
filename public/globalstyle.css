@@ -221,6 +221,7 @@ img {
 	font-size: 16px;
 	line-height: 25px;
 	float: left;
+	white-space: nowrap;
 }
 
 .normal-like-button, .post-like-button {
@@ -612,6 +613,13 @@ img {
 	margin: 15px 150px 50px 50px;
 	padding: 5px;
 	border-radius: 5px;
+}
+
+.deleteprofilebtn-viewprofile
+{
+	position: absolute;
+	top: 750px;
+	left: 100px;
 }
 
 .viewpost-btns, .deletepostbtn-viewpost, .deletecommentbtn-viewpost, .editpostbtn-viewpost, .editcommentbtn-viewpost
