@@ -6,7 +6,7 @@ const Comment = require('./Comment.js');
 const Profile = require('./Profile.js');
 const User = require('./User.js');
 
-const url = 'mongodb://localhost:27017/ccapdev-mp';
+const url = 'mongodb://0.0.0.0:27017/ccapdev-mp';
 
 const options = {
     useUnifiedTopology: true,
