@@ -3,6 +3,8 @@ const Post = require('../models/Post.js');
 const Profile = require('../models/Profile.js');
 const Comment = require('../models/Comment.js');
 const User = require('../models/User.js');
+const { validationResult } = require('express-validator');
+
 const moment = require('moment');
 const path = require('path');
 const fs = require('fs');
@@ -16,10 +18,14 @@ const { profile } = require('console');
 const homeController = {
     //to submit a post
     submitPost: (req, res) => {
+        const errors = validationResult(req);
+        //console.log("errors: " + errors)
         
-        if (req.body.title == '')
+        if (!errors.isEmpty())
         {
-            req.flash('error_msg', 'Title must not be empty.');
+            const messages = errors.array().map((item) => item.msg);
+
+            req.flash('error_msg', messages.join(' '));
             res.redirect('/');
         }
         else
@@ -39,7 +45,7 @@ const homeController = {
                 image.mv(path.resolve('./public/images', newname), (error) => {
                     Post.create({
                         title: req.body.title,
-                        textContent: req.body.textContent,
+                        textContent: req.body.textContent || "(Empty post body)",
                         imageContent: '/images/' + newname,
                         username: req.session.username
                     },  (error, post) => {
@@ -51,7 +57,7 @@ const homeController = {
             else{
                 Post.create({
                     title: req.body.title,
-                    textContent: req.body.textContent,
+                    textContent: req.body.textContent || "(Empty post body)",
                     username: req.session.username,
                 },  (error, post) => {
                     //console.log("on post creation: " + post._id);
@@ -65,7 +71,7 @@ const homeController = {
     //submit a comment for the post
     
     submitComment: (req, res) => {
-        //console.log("submitComment req.body._id: " + req.body._id);
+        
         if (req.files != null){
             const image = req.files.imageContent
             //console.log(req.files.imageContent)
@@ -115,36 +121,36 @@ const homeController = {
         //console.log('profimg' + req.files.profileImg )
         //console.log('charimg' + req.files.faveCharImg )
         try {
-            console.log(req.files.profileImg)
+            //console.log(req.files.profileImg)
             const profImg = req.files.profileImg
             let newname = uuidv4() + path.extname(profImg.name)
             profImg.mv(path.resolve('./public/images', newname), (error) =>{
                 db.updateOne(Profile, {username: req.session.username }, {$set: {profileImg: '/images/' + newname}}, (err, res) => {
-                    console.log(res)
+                    //console.log(res)
                 }); 
             })
 
         }
         catch (e) {
-            console.log('error 1 is' + e)
+            //console.log('error 1 is' + e)
         }
 
         try{
-            console.log(req.files.faveCharImg)
+            //console.log(req.files.faveCharImg)
             const CharImg = req.files.faveCharImg
             let newname2 = uuidv4() + path.extname(CharImg.name)
             CharImg.mv(path.resolve('./public/images', newname2), (error) =>{
                 db.updateOne(Profile, {username: req.session.username }, {$set: {faveCharImg: '/images/' + newname2}}, (err, res) => {
-                    console.log(res)
+                    //console.log(res)
                 }); 
             })
         }
         catch (e){
-            console.log('error 1 is' + e)
+            //console.log('error 1 is' + e)
         }
 
         db.updateOne(Profile, {username: req.session.username }, {$set: {faveQuote: req.body.faveQuote, bio: req.body.bio}}, (err, res) => {
-            console.log(res)
+            //console.log(res)
         }); 
        
         res.redirect('/view-profile?username=' + req.session.username)
@@ -157,8 +163,8 @@ const homeController = {
             newImg.name = newname;
          
             newImg.mv(path.resolve('./public/images', newname), (error) =>{
-                db.updateOne(Post, {_id: req.body._id }, {$set: {imageContent: '/images/' + newname}}, (err, res) => {
-                    console.log(res)
+                db.updateOne(Post, {_id: req.body._id, username: req.session.username}, {$set: {imageContent: '/images/' + newname}}, (err, res) => {
+                    //console.log(res)
                 }); 
             });
 
@@ -167,8 +173,8 @@ const homeController = {
             
         }
 
-        db.updateOne(Post, {_id: req.body._id }, {$set: {textContent: req.body.textContent}}, (err, res) => {
-            console.log(res);
+        db.updateOne(Post, {_id: req.body._id, username: req.session.username }, {$set: {textContent: req.body.textContent || "(Empty post body)"}}, (err, res) => {
+            //console.log(res);
         }); 
 
         res.redirect('/view-post?_id=' + req.body._id);
@@ -183,7 +189,7 @@ const homeController = {
                 newImg.name = newname;
     
                 newImg.mv(path.resolve('./public/images', newname), (error) => {
-                    db.updateOne(Comment, {_id: req.body._id}, {$set: {imageContent: '/images/' + newname}}, (err, res) => {
+                    db.updateOne(Comment, {_id: req.body._id, username: req.session.username}, {$set: {imageContent: '/images/' + newname}}, (err, res) => {
     
                     });
                 });
@@ -191,7 +197,7 @@ const homeController = {
             catch(e){
     
             }
-            db.updateOne(Comment, {_id: req.body._id}, {$set: {textContent: req.body.textContent}}, (err, res) => {
+            db.updateOne(Comment, {_id: req.body._id, username: req.session.username}, {$set: {textContent: req.body.textContent}}, (err, res) => {
     
             });
         }
@@ -205,10 +211,10 @@ const homeController = {
 
     deletePost: (req, res) => {
         
-        console.log("homeController deletePost req.query._id: " + req.query._id);
-        db.deleteOne(Post, {_id: req.query._id}, (result) => {
+        //console.log("homeController deletePost req.query._id: " + req.query._id);
+        db.deleteOne(Post, {_id: req.query._id, username: req.session.username}, (result) => {
             db.deleteMany(Comment, {postid: req.query._id}, (comment_result) => {
-                console.log('Comment deletion: ' + comment_result);
+                //console.log('Comment deletion: ' + comment_result);
             })
             // it wont redirect home idk why
             //res.redirect('/home');
@@ -217,10 +223,8 @@ const homeController = {
 
     deleteComment: (req, res) => {
         
-        console.log("homeController deleteComment req.query._id: " + req.query._id);
-        db.deleteOne(Comment, {_id: req.query._id}, (result) => {
-            // it wont redirect home idk why
-            //res.redirect('/home');
+        //console.log("homeController deleteComment req.query._id: " + req.query._id);
+        db.deleteOne(Comment, {_id: req.query._id, username: req.session.username}, (result) => {
         });
     },
 

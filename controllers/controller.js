@@ -233,16 +233,17 @@ const controller = {
 
         let returnArray = [];
         let postTitle = {
-            title: new RegExp(req.query.text, "ig")
+            title: new RegExp(req.query.text, "i")
         }
         let user_name = {
             username: new RegExp(req.query.text, "ig")
         }
-        db.findMany(Post, postTitle, 'title _id', function(posts){
+        db.findMany(Post, postTitle, 'title _id postingTime', function(posts){
             //console.log("posts: " + posts);
             posts = posts.map(posts => posts.toJSON());
             posts.forEach(element => {
                 element.contentType = 'post';
+                element.postingTime = moment(element.postingTime).fromNow();
             })
             Array.prototype.push.apply(returnArray, posts);
             //console.log("returnArray: " + returnArray);
@@ -252,7 +253,7 @@ const controller = {
                     element.contentType = 'profile';
                 })
                 Array.prototype.push.apply(returnArray, profiles);
-                console.log("returnArray: " + returnArray);
+                //console.log("returnArray: " + returnArray);
                 res.json({ returnResult: returnArray });
             })
         })

@@ -128,17 +128,28 @@ img {
 	width: 23%;
 	left: 300px;
 	top: 60px;
-	background-color: white;
+	background-color: transparent;
+	max-height: 75vh;
+	overflow-y: scroll;
 }
 
+b{
+	font-size: 14px;
+}
 
 .post-searchresult, .profile-searchresult{
 	width: 100%;
+	max-width: 100%;
 	background-color: white;
 	color: #ff7200;
 	padding: 5px;
-	border: 2px black !important;
+	border: 2px solid #ff7200 !important;
+	border-top: 0px !important;
+	border-radius: 0px;
+	font-size: 10px;
 	text-align: left;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 

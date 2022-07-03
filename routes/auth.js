@@ -13,7 +13,7 @@ router.get('/signup', isPublic, controller.getSignup);
 
 // POST methods for form submissions
 router.post('/signup', isPublic, registrationValidation, userController.registerUser);
-router.post('/login', isPublic, userController.loginUser, userController.loginUser);
+router.post('/login', isPublic, loginValidation, userController.loginUser);
 
 // logout
 router.get('/logout', isPrivate, userController.logoutUser);

@@ -32,13 +32,13 @@ router.get('/like-post', isPrivate, controller.likePost);
 
 router.get('/like-comment', isPrivate, controller.likeComment);
 
-router.post('/submit-post', isPrivate, homeController.submitPost);
+router.post('/submit-post', isPrivate, postValidation, homeController.submitPost);
 
 router.post('/comment-post', isPrivate, homeController.submitComment);
 
 router.post('/save-editprofile', isPrivate, homeController.editProfile); 
 
-router.post('/save-editpost', isPrivate, homeController.editPost);
+router.post('/save-editpost', isPrivate, postValidation, homeController.editPost);
 
 router.get('/delete-post', isPrivate, homeController.deletePost);
 

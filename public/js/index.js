@@ -12,13 +12,13 @@ $(document).ready(function () {
         // If the post/comment has not yet been liked
         if (obj.siblings('[name="_id"]').attr('class') == 'post-like') {
             
-            console.log('jqueryid: ' + _id);
+            //console.log('jqueryid: ' + _id);
             $.get('/like-post', { _id: _id }, function(newLikeCount){
                 obj.siblings('.normal-like-count').text(newLikeCount.likes);
             })
         }
         else if (obj.siblings('[name="_id"]').attr('class') == 'comment-like') {
-            console.log('jqueryid: ' + _id);
+            //console.log('jqueryid: ' + _id);
             $.get('/like-comment', { _id: _id }, function(newLikeCount) {
                 obj.siblings('.normal-like-count').text(newLikeCount.likes);
             });
@@ -150,9 +150,8 @@ $(document).ready(function () {
     }); 
 
 
-    $(".searchinput").on("keyup focusin", function(){
+    $(".searchinput").on("keyup", function(){
         let objVal = $(this).val()
-        $('.search-result').empty();
 
         if(objVal != ""){
             var searchQuery = {
@@ -160,17 +159,21 @@ $(document).ready(function () {
             };
             $.get("/search-posts", searchQuery, function(result){
                 let resultArray = result.returnResult;
-                console.log(resultArray);
+                $('.search-result').empty();
+                //console.log(resultArray);
                 resultArray.forEach(element => {
                     if(element.contentType === 'post'){
-                        $('.search-result').append('<button type=\'button\' class=\'post-searchresult\' onclick=location.href=\'/view-post?_id=' + element._id + '\'>' +  element.title + ' : post</button><hr>')
+                        $('.search-result').append('<button type=\'button\' class=\'post-searchresult\' onclick=location.href=\'/view-post?_id=' + element._id + '\'><b>' +  element.title + '</b> : <i>posted '+ element.postingTime +'</i></button>')
                     }else if(element.contentType === 'profile'){
-                        $('.search-result').append('<button class=\'profile-searchresult\' onclick=location.href=\'/view-profile?username=' + element.username + '\'>' +  element.username + ' : profile</button><hr>')
+                        $('.search-result').append('<button class=\'profile-searchresult\' onclick=location.href=\'/view-profile?username=' + element.username + '\'><b>' +  element.username + '</b> : <i>(User)</i></button>')
                     }
                 })
             })  
-        }  
+        }else{
+            $('.search-result').empty();
+        }
     })
+
 
     $(window).keydown(function(event){
         if(event.keyCode == 13) {

@@ -93,6 +93,5 @@ app.use('/', authRouter); // Use the routes var to process registration/login
 
 var server = app.listen(PORT, function()
 {
-    console.log("Server is running at: ");
-    console.log("http://" + HOSTNAME + ":" + PORT);
+    console.log("Server is running at: " + "http://" + HOSTNAME + ":" + PORT);
 });
