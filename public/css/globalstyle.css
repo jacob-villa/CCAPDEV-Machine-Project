@@ -99,7 +99,22 @@ img {
 }
 
 #slideshow {
-	transition: 1s;
+	position: absolute;
+	background-size: cover;
+	background-color: #ffb787;
+	width: 100vw;
+	height:100vh;
+	transition: opacity 1s;
+}
+
+#slideshow2 {
+	background-size: cover;
+	background-color: #ffb787;
+	min-height: 100vh;
+	position: absolute;
+	width: 100vw;
+	height:100vh;
+	transition: opacity 1s;
 }
 
 .format_center {
