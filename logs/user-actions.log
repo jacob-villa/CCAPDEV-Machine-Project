@@ -1,0 +1,67 @@
+2024-07-15T12:32:32.335Z - IP: ::1, User: Guest, Method: POST, URL: /login, Message: Login successful (userID: 993c583d-4213-11ef-9583-089798efa348)
+2024-07-15T12:32:34.399Z - IP: ::1, User: Guest, Method: GET, URL: /logout, Message: User logged out (userID: 993c583d-4213-11ef-9583-089798efa348)
+2024-07-15T12:32:35.794Z - IP: ::1, User: Guest, Method: POST, URL: /login, Message: Validation failed
+2024-07-15T12:32:51.137Z - IP: ::1, User: Guest, Method: POST, URL: /signup, Message: Validation failed
+2024-08-08T07:58:36.129Z - IP: ::1, User: Guest, Method: POST, URL: /signup, Message: Validation failed
+2024-08-08T07:59:22.123Z - IP: ::1, User: Guest, Method: POST, URL: /signup, Message: Validation failed
+2024-08-08T08:02:13.137Z - IP: ::1, User: Guest, Method: POST, URL: /signup, Message: Validation failed
+2024-08-08T15:41:28.606Z - IP: ::1, User: Guest, Method: POST, URL: /login, Message: Login successful (userID: e49805d1-558c-11ef-aed2-089798efa348)
+2024-08-08T15:46:31.038Z - IP: ::1, User: Guest, Method: POST, URL: /login, Message: Login successful (userID: e49805d1-558c-11ef-aed2-089798efa348)
+2024-08-08T17:00:34.511Z - IP: ::1, User: Guest, Method: POST, URL: /signup, Message: User created
+2024-08-08T17:00:50.072Z - IP: ::1, User: Guest, Method: POST, URL: /login, Message: Login successful (userID: ba495536-55a7-11ef-9553-fa0d5275554b)
+2024-08-08T19:27:46.678Z - IP: ::1, User: Guest, Method: POST, URL: /login, Message: Login successful (userID: John)
+2024-08-08T19:28:35.484Z - IP: ::1, User: Guest, Method: POST, URL: /submit-post, Message: UserID: ba495536-55a7-11ef-9553-fa0d5275554b has an error in submitting a post
+2024-08-08T19:42:34.599Z - IP: ::1, User: Guest, Method: POST, URL: /login, Message: Login successful (userID: John)
+2024-08-08T19:52:40.562Z - IP: ::1, User: Guest, Method: POST, URL: /login, Message: Login successful (userID: John)
+2024-08-08T19:54:25.300Z - IP: ::1, User: Guest, Method: POST, URL: /submit-post, Message: UserID: ba495536-55a7-11ef-9553-fa0d5275554b created a post titled Yeah
+2024-08-08T19:54:35.266Z - IP: ::1, User: Guest, Method: GET, URL: /view-post?_id=03855872-55c0-11ef-9553-fa0d5275554b, Message: user: John views the post titled Yeah
+2024-08-08T19:54:42.085Z - IP: ::1, User: Guest, Method: GET, URL: /view-post?_id=03855872-55c0-11ef-9553-fa0d5275554b, Message: user: John views the post titled Yeah
+2024-08-08T21:11:04.669Z - IP: ::1, User: Guest, Method: POST, URL: /login, Message: Login successful (userID: John)
+2024-08-08T21:11:10.526Z - IP: ::1, User: Guest, Method: GET, URL: /view-post?_id=03855872-55c0-11ef-9553-fa0d5275554b, Message: user: John views the post titled Yeah
+2024-08-08T21:12:14.207Z - IP: ::1, User: Guest, Method: GET, URL: /view-post?_id=03855872-55c0-11ef-9553-fa0d5275554b, Message: user: John views the post titled Yeah
+2024-08-08T21:19:21.017Z - IP: ::1, User: Guest, Method: POST, URL: /login, Message: Login successful (userID: John)
+2024-08-08T21:19:22.862Z - IP: ::1, User: Guest, Method: GET, URL: /view-post?_id=03855872-55c0-11ef-9553-fa0d5275554b, Message: user: John views the post titled Yeah
+2024-08-08T21:30:01.757Z - IP: ::1, User: Guest, Method: POST, URL: /login, Message: Login successful (userID: John)
+2024-08-08T21:30:04.226Z - IP: ::1, User: Guest, Method: GET, URL: /view-post?_id=03855872-55c0-11ef-9553-fa0d5275554b, Message: user: John views the post titled Yeah
+2024-08-08T21:31:57.253Z - IP: ::1, User: Guest, Method: GET, URL: /view-post?_id=03855872-55c0-11ef-9553-fa0d5275554b, Message: user: John views the post titled Yeah
+2024-08-08T21:35:38.298Z - IP: ::1, User: Guest, Method: GET, URL: /view-post?_id=03855872-55c0-11ef-9553-fa0d5275554b, Message: user: John views the post titled Yeah
+2024-08-08T21:38:22.250Z - IP: ::1, User: Guest, Method: GET, URL: /view-post?_id=03855872-55c0-11ef-9553-fa0d5275554b, Message: user: John views the post titled Yeah
+2024-08-08T21:43:42.944Z - IP: ::1, User: Guest, Method: POST, URL: /login, Message: Login successful (userID: John)
+2024-08-08T21:43:45.907Z - IP: ::1, User: Guest, Method: GET, URL: /view-profile?username=John, Message: user: John viewed their own profile
+2024-08-08T21:43:49.220Z - IP: ::1, User: Guest, Method: GET, URL: /view-profile?username=John, Message: user: John viewed their own profile
+2024-08-08T21:43:49.952Z - IP: ::1, User: Guest, Method: GET, URL: /view-profile?username=John, Message: user: John viewed their own profile
+2024-08-08T21:43:51.164Z - IP: ::1, User: Guest, Method: GET, URL: /view-profile?username=John, Message: user: John viewed their own profile
+2024-08-08T21:43:52.332Z - IP: ::1, User: Guest, Method: GET, URL: /logout, Message: User logged out (userID: John)
+2024-08-08T21:44:07.498Z - IP: ::1, User: Guest, Method: POST, URL: /login, Message: Incorrect credentials
+2024-08-08T21:44:16.009Z - IP: ::1, User: Guest, Method: POST, URL: /login, Message: Incorrect credentials
+2024-08-08T21:44:26.179Z - IP: ::1, User: Guest, Method: POST, URL: /login, Message: Login successful (userID: John)
+2024-08-08T22:01:50.948Z - IP: ::1, User: Guest, Method: POST, URL: /login, Message: Login successful (userID: John)
+2024-08-08T22:01:53.219Z - IP: ::1, User: Guest, Method: GET, URL: /view-post?_id=03855872-55c0-11ef-9553-fa0d5275554b, Message: user: John views the post titled Yeah
+2024-08-08T22:02:09.211Z - IP: ::1, User: Guest, Method: GET, URL: /view-post?_id=03855872-55c0-11ef-9553-fa0d5275554b, Message: user: John views the post titled Yeah
+2024-08-08T22:11:51.243Z - IP: ::1, User: Guest, Method: POST, URL: /login, Message: Incorrect credentials
+2024-08-08T22:11:57.693Z - IP: ::1, User: Guest, Method: POST, URL: /login, Message: Validation failed
+2024-08-08T22:12:06.737Z - IP: ::1, User: Guest, Method: POST, URL: /login, Message: Incorrect credentials
+2024-08-08T22:12:15.100Z - IP: ::1, User: Guest, Method: POST, URL: /login, Message: Login successful (userID: John)
+2024-08-08T22:12:17.309Z - IP: ::1, User: Guest, Method: GET, URL: /view-post?_id=03855872-55c0-11ef-9553-fa0d5275554b, Message: user: John views the post titled Yeah
+2024-08-09T01:31:27.313Z - IP: ::1, User: Guest, Method: POST, URL: /login, Message: Login successful (userID: John)
+2024-08-09T01:31:34.979Z - IP: ::1, User: Guest, Method: GET, URL: /view-post?_id=03855872-55c0-11ef-9553-fa0d5275554b, Message: user: John views the post titled Yeah
+2024-08-09T01:35:45.249Z - IP: ::1, User: Guest, Method: GET, URL: /view-post?_id=03855872-55c0-11ef-9553-fa0d5275554b, Message: user: John views the post titled Yeah
+2024-08-09T01:48:21.419Z - IP: ::1, User: Guest, Method: POST, URL: /login, Message: Login successful (userID: John)
+2024-08-09T01:55:26.285Z - IP: ::1, User: Guest, Method: POST, URL: /login, Message: Login successful (userID: John)
+2024-08-09T01:58:30.769Z - IP: ::1, User: Guest, Method: GET, URL: /view-post?_id=03855872-55c0-11ef-9553-fa0d5275554b, Message: user: John views the post titled Yeah
+2024-08-09T02:04:42.317Z - IP: ::1, User: Guest, Method: POST, URL: /login, Message: Login successful (userID: John)
+2024-08-09T02:04:44.631Z - IP: ::1, User: Guest, Method: GET, URL: /view-post?_id=03855872-55c0-11ef-9553-fa0d5275554b, Message: user: John views the post titled Yeah
+2024-08-09T02:06:58.913Z - IP: ::1, User: Guest, Method: GET, URL: /view-post?_id=03855872-55c0-11ef-9553-fa0d5275554b, Message: user: John views the post titled Yeah
+2024-08-09T02:09:46.687Z - IP: ::1, User: Guest, Method: GET, URL: /view-post?_id=03855872-55c0-11ef-9553-fa0d5275554b, Message: user: John views the post titled Yeah
+2024-08-09T02:09:53.971Z - IP: ::1, User: Guest, Method: GET, URL: /view-post?_id=03855872-55c0-11ef-9553-fa0d5275554b, Message: user: John views the post titled Yeah
+2024-08-09T02:12:48.708Z - IP: ::1, User: Guest, Method: GET, URL: /view-post?_id=03855872-55c0-11ef-9553-fa0d5275554b, Message: user: John views the post titled Yeah
+2024-08-09T02:12:54.379Z - IP: ::1, User: Guest, Method: GET, URL: /view-post?_id=03855872-55c0-11ef-9553-fa0d5275554b, Message: user: John views the post titled Yeah
+2024-08-09T02:15:42.471Z - IP: ::1, User: Guest, Method: GET, URL: /view-post?_id=03855872-55c0-11ef-9553-fa0d5275554b, Message: user: John views the post titled Yeah
+2024-08-09T02:26:30.511Z - IP: ::1, User: Guest, Method: POST, URL: /login, Message: Login successful (userID: John)
+2024-08-09T02:26:34.078Z - IP: ::1, User: Guest, Method: GET, URL: /logout, Message: User logged out (userID: John)
+2024-08-09T02:26:43.083Z - IP: ::1, User: Guest, Method: POST, URL: /login, Message: Login successful (userID: John)
+2024-08-09T02:26:47.821Z - IP: ::1, User: Guest, Method: GET, URL: /logout, Message: User logged out (userID: John)
+2024-08-09T02:26:56.768Z - IP: ::1, User: Guest, Method: POST, URL: /login, Message: Login successful (userID: John)
+2024-08-09T02:26:58.601Z - IP: ::1, User: Guest, Method: GET, URL: /logout, Message: User logged out (userID: John)
+2024-08-09T02:27:05.947Z - IP: ::1, User: Guest, Method: POST, URL: /login, Message: Login successful (userID: John)
+2024-08-09T02:27:07.432Z - IP: ::1, User: Guest, Method: GET, URL: /logout, Message: User logged out (userID: John)

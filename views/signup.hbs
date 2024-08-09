@@ -1,36 +1,55 @@
+
+
 <div class="login_container">
-	
-	<div class="login_content">
-		<img class="format_center" src="images/logo.png"></img>
-	<h2 class="login_text">Sign-up</h2>
-	<h4 class="login_text">	
-		<form action="/signup" method="POST" enctype="application/x-www-form-urlencoded">
-			Email: <br>
-			<input placeholder="Email" type="email" id="email" name="email"/>
-			<br>
-			<br>
-			Username: <br>
-			<input placeholder="Username" type="text" id="username" name="username"/>
-			<br>
-			<br>
-			Password: <br>
-			<input placeholder="Password" type="password" id="password" name="password"/>
-			<br>
-			<br>
-			Confirm Password: <br>
-			<input placeholder="Confirm Password" type="password" id="confirmPass" name="confirmPass"/>
-			<br>
-			<br>
-			<input type="submit" value="Sign-up"></input>
-			<br>
-			<h5>
-				<br>
-				<a href="/login">Already have an account? Log-in here</a>
-			</h5>
-			<br>
-		</form>
-	</h4>
-		{{> status_msg}}
-	</div>
-	
+  <div class="signup_content">
+    <img class="format_center_2" src="images/logo.png"></img>
+    <h2 class="login_text">Sign-up</h2>
+    <h4 class="login_text">
+      <form action="/signup" method="POST" enctype="multipart/form-data" id="signupForm">
+        <div class="flexbox_signup">
+          <div class="signup_item">
+            Email: 
+            <input placeholder="Email" type="email" id="email" name="email" required/>
+          </div>
+
+          <div class="signup_item">
+            Username: 
+            <input placeholder="Username" type="text" id="username" name="username" required/>
+          </div>
+          
+          <div class="signup_item">
+            Full Name: 
+            <input placeholder="Full Name" type="text" id="full_name" name="full_name" required/>
+          </div>
+
+          <div class="signup_item">
+            Phone Number: 
+            <input placeholder="+63XXXXXXXXXX or 09XXXXXXXXX" type="tel" id="contact_number" name="contact_number" required/>
+          </div>
+
+          <div class="signup_item">
+            Password: 
+            <input placeholder="Password" type="password" id="password" name="password" required/>
+          </div>
+
+          <div class="signup_item">
+            Confirm Password: 
+            <input placeholder="Confirm Password" type="password" id="confirmPass" name="confirmPass" required/>
+          </div>
+
+          <div class="signup_item_2">
+            Profile Image: (Optional) 
+            <input type="file" value="Attach Photo" class="post-upload-image" name="imageContent" accept="image/jpeg, image/png" onchange="validateFileType(this)"/> 
+          </div>
+
+        </div>
+
+        <input type="submit" value="Sign-up"></input>
+        <br>
+        <h5><br><a href="/login">Already have an account? Log-in here</a></h5>
+        
+      </form>
+    </h4>
+    {{> status_msg}}
+  </div>
 </div>

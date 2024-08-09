@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@prisma/client": "^5.15.0",
     "bcryptjs": "^2.4.3",
     "connect-flash": "^0.1.1",
     "connect-mongo": "^4.6.0",
@@ -11,18 +12,22 @@
     "express-validator": "^6.14.2",
     "fs": "^0.0.1-security",
     "hbs": "^4.2.0",
+    "https": "^1.0.0",
     "moment": "^2.29.3",
     "mongoose": "^6.3.5",
     "multer": "^1.4.5-lts.1",
     "node-uuid": "^1.4.8",
     "on-headers": "^1.0.2",
+    "rate-limiter-flexible": "^5.0.3",
     "uuid": "^8.3.2"
   },
   "name": "animatrix-ccapdev",
   "description": "CCAPDEV Machine Project",
   "version": "1.0.0",
   "main": "index.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "prisma": "^5.15.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
